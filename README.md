@@ -1,4 +1,4 @@
-# 📝 Task Manager Application with Docker Compose 🚀
+# 📝 Task Manager Application with Docker Compose 
 
 This project is a simple task manager application designed for learning Docker Compose. It includes a **Flask backend** 🐍, a **PostgreSQL database** 🗄️, and an **NGINX-powered frontend** 🌐.
 
@@ -46,7 +46,7 @@ flask_docker/
 
 1. Clone the repository:  
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ahmedmaged6/three-tier-task-compose.git
    cd flask_docker
    ```
 
