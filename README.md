@@ -47,7 +47,7 @@ flask_docker/
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ahmedmaged6/three-tier-task-compose.git
-   cd flask_docker
+   cd three-tier-task-compose
    ```
 
 2. Build and run the services:  
