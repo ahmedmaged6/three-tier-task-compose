@@ -1,0 +1,39 @@
+#docker run --name database-container --network custom1 -p 5432:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=task_manager -d postgres:latest
+#docker run --name backend-container --network custom1 -p 5000:5000 -d backend-image
+#docker run --name frontend-container --network custom1 -p 8090:80 -d frontend-image 
+
+services: 
+  database-container:
+    image: postgres:latest 
+    environment:
+      POSTGRES_USER: user 
+      POSTGRES_PASSWORD: password 
+      POSTGRES_DB: task_manager 
+    ports: 
+      - "5432:5432" 
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    networks:
+      - todo-custom-network
+
+  backend-container:
+    build:
+      context: ./backend
+    ports:
+      - 5000:5000
+    networks:
+      - todo-custom-network
+
+  frontend-container:
+    build:
+      context: ./frontend
+    ports:
+      - 8090:80
+    networks:
+      - todo-custom-network
+
+volumes:
+  database_data:
+
+networks:
+  todo-custom-network:
